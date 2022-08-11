@@ -2,20 +2,16 @@ package com.bridgelabz;
 import java.util.Scanner;
 
 //Linked List class
-public class LinkedList
-{
+public class LinkedList {
     //declaring Nodes
     Node head, tail;
     //method to add the data
-    public Node add(int data)
-    {
+    public Node add(int data) {
         Node newNode = new Node(data);
-        if (head == null)
-        {
+        if (head == null) {
             head = newNode;
             tail = newNode;
-        } else
-        {
+        } else {
             Node temp = head;//56=>30=>70
             this.head = newNode;
             newNode.next = temp;
@@ -23,31 +19,25 @@ public class LinkedList
         return newNode;
     }
     //method for append the data
-    public void append(int data)
-    { // 56=> 30=> 70
+    public void append(int data) { // 56=> 30=> 70
         Node newNode = new Node(data);
-        if (head == null)
-        {
+        if (head == null) {
             head = newNode;
             tail = newNode;
-        } else
-        {
+        } else {
             this.tail.next = newNode;
             tail = newNode;
         }
     }
     //method for inserting the data in between
-    public void insertInBetween(Node previousNode, Node newNode)
-    {
+    public void insertInBetween(Node previousNode, Node newNode) {
         Node tempNode = previousNode.next;
         previousNode.next = newNode;
         newNode.next = tempNode;
     }
     //pop method
-    public void pop()
-    {
-        if (this.head == null)
-        {
+    public void pop() {
+        if (this.head == null) {
 
         }
         Node temp = head;
@@ -92,6 +82,26 @@ public class LinkedList
                 System.out.println(data+" is not found.");
         }
     }
+    // function to create and return a Node
+    static Node GetNode(int data) {
+        return new Node(data);
+    }
+    public void insertAtPosition() {
+        System.out.println("\nEnter the key you want to enter after 30:");
+        Scanner sc = new Scanner(System.in);
+        int newKey = sc.nextInt();
+        Node insertNode = new Node(newKey);
+        Node temp = head;
+        while (temp != null) {
+            if (temp.key == 30) {
+                Node afterInsert = temp.next;
+                temp.next = insertNode;
+                temp.next.next = afterInsert;
+                break;
+            }
+            temp = temp.next;
+        }
+    }
     //print method
     public void print() {
         if (head == null) {
@@ -109,7 +119,8 @@ public class LinkedList
         System.out.println("Welcome to the Linked List Program.");
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the options:\n1. Add the data.\n2. Append the data.\n3. Insert in between\n4. " +
-                "Delete the data at first position.\n5. Delete at last position.\n6. Find the node");
+                "Delete the data at first position.\n5. Delete at last position.\n6. Find the node\n7. Inserting Node at particular position." +
+                "\n");
         switch (scanner.nextInt()) {
 
             case 1:
@@ -129,6 +140,9 @@ public class LinkedList
                 break;
             case 6:
                 Operations.search();
+                break;
+            case 7:
+                Operations.insertPosition();
                 break;
             default:
                 System.out.println("Invalid Input");
