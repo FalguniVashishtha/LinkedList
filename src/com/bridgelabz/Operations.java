@@ -10,8 +10,7 @@ public class Operations {
         l1.print();
     }
     // Created a method to append data
-    public static void addDataAppend()
-    {
+    public static void addDataAppend() {
         LinkedList l2 = new LinkedList();
         l2.append(56);
         l2.append(30);
@@ -19,8 +18,7 @@ public class Operations {
         l2.print();
     }
     //method to insert the data in between
-    public static void insertInBetween()
-    {
+    public static void insertInBetween() {
         LinkedList l3 = new LinkedList();
         Node secondNode = l3.add(70);
         Node firstNode = l3.add(56);
@@ -77,5 +75,25 @@ public class Operations {
         l7.insertAtPosition();
         System.out.println("After inserting");
         l7.print();
+        System.out.println("\n");
+    }
+    public static void deleteAtPosition(){
+        LinkedList l8 = new LinkedList();
+        Node firstNode = l8.add(70);
+        Node secondNode = l8.add(30);
+        Node newNode = l8.add(56);
+        System.out.println("Before");
+        l8.print();
+        System.out.print("\n");
+        l8.insertAtPosition();
+        System.out.println("After");
+        l8.print();
+        System.out.println(" ");
+        l8.size();
+        l8.deleteAtPosition();
+        System.out.println("After Deleting The Value");
+        l8.print();
+        System.out.println(" ");
+        l8.size();
     }
 }
