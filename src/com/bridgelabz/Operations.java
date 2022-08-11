@@ -1,7 +1,9 @@
 package com.bridgelabz;
 
-public class Operations {
-    public static void addData() {
+public class Operations
+{
+    public static void addData()
+    {
         LinkedList l1 = new LinkedList();
         l1.add(70);
         l1.add(30);
@@ -10,7 +12,8 @@ public class Operations {
     }
 
     // Created a method to append data
-    public static void addDataAppend() {
+    public static void addDataAppend()
+    {
         LinkedList l2 = new LinkedList();
         l2.append(56);
         l2.append(30);
@@ -34,17 +37,28 @@ public class Operations {
     }
 
     //pop method
-    public static void pop()
-    {
-        LinkedList linkedList = new LinkedList();
-        Node firstNode = linkedList.add(70);
-        Node secondNode = linkedList.add(30);
-        Node newNode = linkedList.add(56);
+    public static void pop() {
+        LinkedList l4 = new LinkedList();
+        Node firstNode = l4.add(70);
+        Node secondNode = l4.add(30);
+        Node newNode = l4.add(56);
         System.out.println("Before");
-        linkedList.print();
-        linkedList.pop();
+        l4.print();
+        l4.pop();
         System.out.println();
         System.out.println("After");
-        linkedList.print();
+        l4.print();
+    }
+    public static void popLast()
+    {
+        LinkedList l5=new LinkedList();
+        Node firstNode= l5.add(70);
+        Node secondNode= l5.add(30);
+        Node newNode=l5.add(56);
+        System.out.println("Before");
+        l5.print();
+        l5.popLast();
+        System.out.println("After");
+        l5.print();
     }
 }
