@@ -1,8 +1,10 @@
 package com.bridgelabz;
 
-public class Operations {
+public class Operations
+{
     //created method to add data
-    public static void addData() {
+    public static void addData()
+    {
         LinkedList l1 = new LinkedList();
         l1.add(70);
         l1.add(30);
@@ -64,8 +66,7 @@ public class Operations {
         System.out.println("The linked list is: ");
         l6.print();
     }
-    public static void insertPosition()
-    {
+    public static void insertPosition() {
         LinkedList l7=new LinkedList();
         Node firstNode= l7.add(70);
         Node secondNode= l7.add(30);

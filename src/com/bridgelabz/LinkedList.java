@@ -1,13 +1,11 @@
 package com.bridgelabz;
 import java.util.Scanner;
 
-public class LinkedList
-{
+public class LinkedList {
     //declaring Nodes
     Node head, tail;
     //method to add the data
-    public Node add(int data)
-    {
+    public Node add(int data) {
         Node newNode = new Node(data);
         if (head == null) {
             head = newNode;
@@ -38,8 +36,10 @@ public class LinkedList
         newNode.next = tempNode;
     }
     //pop method
-    public void pop() {
-        if (this.head == null) {
+    public void pop()
+    {
+        if (this.head == null)
+        {
 
         }
         Node temp = head;
@@ -62,7 +62,8 @@ public class LinkedList
             temp.next = null;
         }
     }
-    public void search() {
+    public void search()
+    {
         System.out.println("Enter the key you want to search:");
         Scanner sc = new Scanner(System.in);
         int data = sc.nextInt();
@@ -158,7 +159,7 @@ public class LinkedList
             Scanner sc = new Scanner(System.in);
             System.out.println("Enter the options:\n1. Add the data.\n2. Append the data.\n3. Insert in between\n4. " +
                     "Delete the data at first position.\n5. Delete at last position.\n6. Find the node\n7. Inserting Node at particular position." +
-                    "\n8. Delete at Index Position.");
+                    "\n8. Delete at Index Position.\n9. Sorting the list");
             choose = sc.nextInt();
             switch (choose) {
 
@@ -186,10 +187,13 @@ public class LinkedList
                 case 8:
                     Operations.deleteAtPosition();
                     break;
+                case 9:
+                    SortedList.sort();
+                    break;
                 default:
                     System.out.println("Invalid Input");
                     break;
             }
-        } while (choose != 8);
+        } while (choose != 9);
     }
 }
